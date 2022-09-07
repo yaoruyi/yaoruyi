@@ -736,7 +736,7 @@ $(function () {
   var tt = loadData();
   //配置项
   $('.start-btn').click(function () {
-    //$('audio').get(0).play();
+    $('audio').get(0).play();
     $('.init-box').addClass('hidden');
     $('.game-box').removeClass('hidden');
     var gameConfig = {
