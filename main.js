@@ -12,21 +12,10 @@ function LinkGame(config) {
   this.rows = config.rows + 2 || 8; // 行数
   this.level = config.level || 0; // 等级
   this.leftDisorderTime = 5; // 剩余重排次数
-  this.audios = [
-    "images/words/零-líng.mp3","images/words/金-jīn.mp3","images/words/一-yī.mp3","images/words/丁-dīng.mp3","images/words/七-qī.mp3","images/words/万-wàn.mp3","images/words/三-sān.mp3","images/words/上-shàng.mp3","images/words/下-xià.mp3","images/words/不-bù.mp3","images/words/专-zhuān.mp3","images/words/业-yè.mp3","images/words/东-dōng.mp3","images/words/两-liǎng.mp3","images/words/个-gè.mp3","images/words/中-zhōng.mp3","images/words/为-wéi.mp3","images/words/主-zhǔ.mp3","images/words/么-mó.mp3","images/words/乐-lè.mp3","images/words/九-jiǔ.mp3","images/words/也-yě.mp3","images/words/习-xí.mp3","images/words/乡-xiāng.mp3","images/words/书-shū.mp3","images/words/了-liǎo.mp3","images/words/二-èr.mp3","images/words/云-yún.mp3","images/words/五-wǔ.mp3","images/words/井-jǐng.mp3","images/words/亮-liàng.mp3","images/words/亲-qīn.mp3","images/words/人-rén.mp3","images/words/什-shí.mp3","images/words/今-jīn.mp3","images/words/从-cóng.mp3","images/words/他-tā.mp3","images/words/以-yǐ.mp3","images/words/们-mén.mp3","images/words/伙-huǒ.mp3","images/words/会-huì.mp3","images/words/伴-bàn.mp3","images/words/位-wèi.mp3","images/words/你-nǐ.mp3","images/words/借-jiè.mp3","images/words/做-zuò.mp3","images/words/像-xiàng.mp3","images/words/儿-ér.mp3","images/words/先-xiān.mp3","images/words/光-guāng.mp3","images/words/入-rù.mp3","images/words/全-quán.mp3","images/words/八-bā.mp3","images/words/公-gōng.mp3","images/words/六-liù.mp3","images/words/兰-lán.mp3","images/words/共-gòng.mp3","images/words/关-guān.mp3","images/words/兴-xīng.mp3","images/words/再-zài.mp3","images/words/写-xiě.mp3","images/words/军-jūn.mp3","images/words/冬-dōng.mp3","images/words/冷-lěng.mp3","images/words/净-jìng.mp3","images/words/凉-liáng.mp3","images/words/几-jī.mp3","images/words/出-chū.mp3","images/words/分-fēn.mp3","images/words/刚-gāng.mp3","images/words/别-bié.mp3","images/words/到-dào.mp3","images/words/前-qián.mp3","images/words/力-lì.mp3","images/words/办-bàn.mp3","images/words/动-dòng.mp3","images/words/北-běi.mp3","images/words/十-shí.mp3","images/words/千-qiān.mp3","images/words/升-shēng.mp3","images/words/午-wǔ.mp3","images/words/半-bàn.mp3","images/words/南-nán.mp3","images/words/卜-bǔ.mp3","images/words/原-yuán.mp3","images/words/去-qù.mp3","images/words/又-yòu.mp3","images/words/友-yǒu.mp3","images/words/发-fā.mp3","images/words/变-biàn.mp3","images/words/口-kǒu.mp3","images/words/古-gǔ.mp3","images/words/只-zhī.mp3","images/words/叫-jiào.mp3","images/words/可-kě.mp3","images/words/右-yòu.mp3","images/words/叶-yè.mp3","images/words/吃-chī.mp3","images/words/各-gè.mp3","images/words/合-hé.mp3","images/words/同-tóng.mp3","images/words/名-míng.mp3","images/words/后-hòu.mp3","images/words/向-xiàng.mp3","images/words/吓-xià.mp3","images/words/吗-má.mp3","images/words/吧-bā.mp3","images/words/听-tīng.mp3","images/words/吹-chuī.mp3","images/words/呀-yā.mp3","images/words/呢-ní.mp3","images/words/和-hé.mp3","images/words/哪-nǎ.mp3","images/words/唱-chàng.mp3","images/words/四-sì.mp3","images/words/回-huí.mp3","images/words/因-yīn.mp3","images/words/园-yuán.mp3","images/words/土-tǔ.mp3","images/words/在-zài.mp3","images/words/地-dì.mp3","images/words/坐-zuò.mp3","images/words/声-shēng.mp3","images/words/处-chǔ.mp3","images/words/多-duō.mp3","images/words/大-dà.mp3","images/words/天-tiān.mp3","images/words/太-tài.mp3","images/words/头-tóu.mp3","images/words/女-nǚ.mp3","images/words/奶-nǎi.mp3","images/words/她-tā.mp3","images/words/妈-mā.mp3","images/words/姐-jiě.mp3","images/words/子-zǐ.mp3","images/words/学-xué.mp3","images/words/孩-hái.mp3","images/words/完-wán.mp3","images/words/定-dìng.mp3","images/words/家-jiā.mp3","images/words/对-duì.mp3","images/words/小-xiǎo.mp3","images/words/少-shǎo.mp3","images/words/就-jiù.mp3","images/words/尺-chǐ.mp3","images/words/山-shān.mp3","images/words/岁-suì.mp3","images/words/工-gōng.mp3","images/words/左-zuǒ.mp3","images/words/已-yǐ.mp3","images/words/巴-bā.mp3","images/words/巾-jīn.mp3","images/words/师-shī.mp3","images/words/带-dài.mp3","images/words/帮-bāng.mp3","images/words/常-cháng.mp3","images/words/干-gān.mp3","images/words/平-píng.mp3","images/words/年-nián.mp3","images/words/广-guǎng.mp3","images/words/座-zuò.mp3","images/words/开-kāi.mp3","images/words/往-wǎng.mp3","images/words/很-hěn.mp3","images/words/得-dé.mp3","images/words/心-xīn.mp3","images/words/忘-wàng.mp3","images/words/忙-máng.mp3","images/words/快-kuài.mp3","images/words/念-niàn.mp3","images/words/怕-pà.mp3","images/words/急-jí.mp3","images/words/总-zǒng.mp3","images/words/情-qíng.mp3","images/words/想-xiǎng.mp3","images/words/意-yì.mp3","images/words/成-chéng.mp3","images/words/我-wǒ.mp3","images/words/房-fáng.mp3","images/words/手-shǒu.mp3","images/words/才-cái.mp3","images/words/扫-sǎo.mp3","images/words/找-zhǎo.mp3","images/words/把-bǎ.mp3","images/words/拉-lā.mp3","images/words/收-shōu.mp3","images/words/放-fàng.mp3","images/words/文-wén.mp3","images/words/新-xīn.mp3","images/words/方-fāng.mp3","images/words/无-wú.mp3","images/words/日-rì.mp3","images/words/早-zǎo.mp3","images/words/时-shí.mp3","images/words/明-míng.mp3","images/words/星-xīng.mp3","images/words/春-chūn.mp3","images/words/是-shì.mp3","images/words/晚-wǎn.mp3","images/words/更-gēng.mp3","images/words/最-zuì.mp3","images/words/月-yuè.mp3","images/words/有-yǒu.mp3","images/words/朋-péng.mp3","images/words/木-mù.mp3","images/words/本-běn.mp3","images/words/朵-duǒ.mp3","images/words/机-jī.mp3","images/words/李-lǐ.mp3","images/words/条-tiáo.mp3","images/words/来-lái.mp3","images/words/林-lín.mp3","images/words/果-guǒ.mp3","images/words/树-shù.mp3","images/words/桃-táo.mp3","images/words/桥-qiáo.mp3","images/words/正-zhèng.mp3","images/words/母-mǔ.mp3","images/words/毛-máo.mp3","images/words/气-qì.mp3","images/words/水-shuǐ.mp3","images/words/江-jiāng.mp3","images/words/汽-qì.mp3","images/words/沙-shā.mp3","images/words/没-méi.mp3","images/words/河-hé.mp3","images/words/法-fǎ.mp3","images/words/洗-xǐ.mp3","images/words/活-huó.mp3","images/words/海-hǎi.mp3","images/words/淡-dàn.mp3","images/words/湖-hú.mp3","images/words/火-huǒ.mp3","images/words/点-diǎn.mp3","images/words/热-rè.mp3","images/words/照-zhào.mp3","images/words/爱-ài.mp3","images/words/父-fù.mp3","images/words/爷-yé.mp3","images/words/爸-bà.mp3","images/words/片-piàn.mp3","images/words/牙-yá.mp3","images/words/牛-niú.mp3","images/words/王-wáng.mp3","images/words/玩-wán.mp3","images/words/球-qiú.mp3","images/words/瓜-guā.mp3","images/words/生-shēng.mp3","images/words/用-yòng.mp3","images/words/田-tián.mp3","images/words/电-diàn.mp3","images/words/男-nán.mp3","images/words/画-huà.mp3","images/words/白-bái.mp3","images/words/百-bǎi.mp3","images/words/的-dí.mp3","images/words/皮-pí.mp3","images/words/目-mù.mp3","images/words/看-kàn.mp3","images/words/真-zhēn.mp3","images/words/着-zhuó.mp3","images/words/知-zhī.mp3","images/words/短-duǎn.mp3","images/words/石-shí.mp3","images/words/禾-hé.mp3","images/words/秀-xiù.mp3","images/words/秋-qiū.mp3","images/words/种-zhǒng.mp3","images/words/空-kōng.mp3","images/words/立-lì.mp3","images/words/童-tóng.mp3","images/words/竹-zhú.mp3","images/words/笑-xiào.mp3","images/words/米-mǐ.mp3","images/words/红-hóng.mp3","images/words/级-jí.mp3","images/words/练-liàn.mp3","images/words/给-gěi.mp3","images/words/绿-lǜ.mp3","images/words/网-wǎng.mp3","images/words/羊-yáng.mp3","images/words/美-měi.mp3","images/words/老-lǎo.mp3","images/words/耳-ěr.mp3","images/words/脸-liǎn.mp3","images/words/自-zì.mp3","images/words/节-jié.mp3","images/words/花-huā.mp3","images/words/苗-miáo.mp3","images/words/苦-kǔ.mp3","images/words/草-cǎo.mp3","images/words/虫-chóng.mp3","images/words/虾-xiā.mp3","images/words/蚁-yǐ.mp3","images/words/蚂-mǎ.mp3","images/words/行-háng.mp3","images/words/衣-yī.mp3","images/words/西-xī.mp3","images/words/要-yào.mp3","images/words/见-jiàn.mp3","images/words/认-rèn.mp3","images/words/让-ràng.mp3","images/words/许-xǔ.mp3","images/words/诗-shī.mp3","images/words/话-huà.mp3","images/words/语-yǔ.mp3","images/words/说-shuō.mp3","images/words/请-qǐng.mp3","images/words/谁-shéi.mp3","images/words/象-xiàng.mp3","images/words/贝-bèi.mp3","images/words/走-zǒu.mp3","images/words/赶-gǎn.mp3","images/words/起-qǐ.mp3","images/words/足-zú.mp3","images/words/跑-pǎo.mp3","images/words/跟-gēn.mp3","images/words/跳-tiào.mp3","images/words/车-chē.mp3","images/words/边-biān.mp3","images/words/过-guò.mp3","images/words/这-zhè.mp3","images/words/进-jìn.mp3","images/words/远-yuǎn.mp3","images/words/连-lián.mp3","images/words/送-sòng.mp3","images/words/选-xuǎn.mp3","images/words/道-dào.mp3","images/words/那-nà.mp3","images/words/都-dū.mp3","images/words/里-lǐ.mp3","images/words/量-liáng.mp3","images/words/长-cháng.mp3","images/words/门-mén.mp3","images/words/闭-bì.mp3","images/words/问-wèn.mp3","images/words/间-jiān.mp3","images/words/队-duì.mp3","images/words/阳-yáng.mp3","images/words/雨-yǔ.mp3","images/words/雪-xuě.mp3","images/words/非-fēi.mp3","images/words/面-miàn.mp3","images/words/风-fēng.mp3","images/words/飞-fēi.mp3","images/words/香-xiāng.mp3","images/words/马-mǎ.mp3","images/words/高-gāo.mp3","images/words/鱼-yú.mp3","images/words/鸟-niǎo.mp3","images/words/黄-huáng.mp3","images/words/齐-qí.mp3"
-  ];
-  this.lesson_number = [
-    'images/numbers/0.svg',
-    'images/numbers/1.svg',
-    'images/numbers/2.svg',
-    'images/numbers/3.svg',
-    'images/numbers/4.svg',
-    'images/numbers/5.svg',
-    'images/numbers/6.svg',
-    'images/numbers/7.svg',
-    'images/numbers/8.svg',
-    'images/numbers/9.svg',
-  ]; 
+  this.loading = config.ot.loading;
+  this.audios = config.ot.audios;
+
+  console.log(this.loading);
 
   this.number_audio = {
     '/images/numbers/0.svg':"images/words/零-líng.mp3",
@@ -40,64 +29,6 @@ function LinkGame(config) {
     '/images/numbers/8.svg':"images/words/八-bā.mp3",
     '/images/numbers/9.svg':"images/words/九-jiǔ.mp3"
   };
-
-  this.lesson_1 = [
-    'images/words/天-5929.svg',
-    'images/words/地-5730.svg',
-    'images/words/人-4EBA.svg',
-    'images/words/你-4F60.svg',
-    'images/words/我-6211.svg',
-    'images/words/他-4ED6.svg',
-    'images/words/金-91D1.svg',
-    'images/words/木-6728.svg',
-    'images/words/水-6C34.svg',
-    'images/words/火-706B.svg',
-    'images/words/土-571F.svg',
-    'images/words/一-4E00.svg',
-    'images/words/二-4E8C.svg',
-    'images/words/三-4E09.svg',
-    'images/words/四-56DB.svg',
-    'images/words/五-4E94.svg',
-    'images/words/上-4E0A.svg',
-    'images/words/下-4E0B.svg',
-    'images/words/日-65E5.svg',
-    'images/words/月-6708.svg',
-  ]; 
-  this.lesson_2 = [
-    'images/words/金-91D1.svg',
-    'images/words/木-6728.svg',
-    'images/words/水-6C34.svg',
-    'images/words/火-706B.svg',
-    'images/words/土-571F.svg',
-  ];
-
-  this.lesson_2_1 = [
-    'images/words/一-4E00.svg',
-    'images/words/二-4E8C.svg',
-    'images/words/三-4E09.svg',
-    'images/words/四-56DB.svg',
-    'images/words/五-4E94.svg',
-    'images/words/上-4E0A.svg',
-    'images/words/下-4E0B.svg',
-  ];
-
-  this.lesson_2_2 = [
-    'images/words/金-91D1.svg',
-    'images/words/木-6728.svg',
-    'images/words/水-6C34.svg',
-    'images/words/火-706B.svg',
-    'images/words/土-571F.svg',
-    'images/words/天-5929.svg',
-    'images/words/地-5730.svg',
-    'images/words/分-5206.svg',
-    'images/words/上-4E0A.svg',
-    'images/words/下-4E0B.svg',
-    'images/words/日-65E5.svg',
-    'images/words/月-6708.svg',
-    'images/words/照-7167.svg',
-    'images/words/今-4ECA.svg',
-    'images/words/古-53E4.svg',
-  ];
 
   this.gifts = [ 
     'images/gifts/0.png',
@@ -130,6 +61,7 @@ function LinkGame(config) {
     'images/gifts/27.png',
     'images/gifts/28.png',
   ];
+
   this.nums = [
     'images/0.png',
     'images/1.png',
@@ -290,7 +222,7 @@ LinkGame.prototype = {
     this.updateDomNumbers($('.level'), this.level + 1, 1);
   },
   createMap: function () {
-    this.gifts = this.gifts.concat(this.lesson_1).concat(this.lesson_number);
+    this.gifts = this.gifts.concat(this.loading);
     this.gifts = this.shuffleArray(this.gifts);
     var count = 0;
     for (var row = 0; row < this.rows; row++) {
@@ -403,7 +335,7 @@ LinkGame.prototype = {
     } else {
       setTimeout(function(){
         $("#no")[0].play();
-      }, 1000);  
+      }, 300);  
       this.domRemoveActive(preIndex);
     }
   },
@@ -729,7 +661,9 @@ LinkGame.prototype = {
      const urlc = new URL(imgSrcDecode);
      var key = urlc.pathname;
      if(self.isKeyExists(self.number_audio, key)){
-      var strkey = key.replace(/\//g, "-");
+      var strkey = key.replace(/\//g, "");
+      strkey = strkey.replace(/\./g, "");
+      console.log(strkey);
       if($("#"+strkey)[0]!=undefined){
         $("#"+strkey)[0].play();
       }else{
@@ -760,8 +694,47 @@ LinkGame.prototype = {
   }
 };
 
+function getQueryVariable(variable)
+{
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+
+function loadData() {
+  var loading = getQueryVariable("loading");
+    var ot = {
+      "audios":[],
+      "loading":[]
+    };
+    $.getJSON("data/audios.json", function (data) {
+      ot.audios = data;
+    });
+    if(loading!='') {
+      $.getJSON("data/"+loading+".json", function (data) {
+        ot.loading = data;
+      });
+    }else{
+      $.getJSON("data/numberText.json", function (data) {
+        ot.loading = data;
+      });
+      $.getJSON("data/readText.json", function (data) {
+        ot.loading = ot.loading.concat(data);
+      });
+      $.getJSON("data/writeText.json", function (data) {
+        ot.loading = ot.loading.concat(data);
+      });
+    }
+    return ot;
+}
 
 $(function () {
+  var tt = loadData();
+  //配置项
   $('.start-btn').click(function () {
     //$('audio').get(0).play();
     $('.init-box').addClass('hidden');
@@ -772,6 +745,7 @@ $(function () {
       rows: 7,
       cols: 10,
       level: 0,
+      ot: tt,
     }
     new LinkGame(gameConfig).init();
   });

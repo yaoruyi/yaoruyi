@@ -251,4 +251,19 @@ body {
   background-size: contain;
 }
 
+.fixed {
+  position: fixed;
+  top: 100px;
+  right: 0px;
+}
+.fixed > button {
+  padding: 0.5em 3em;
+  border: 1px solid #8d8d8d;
+  background-color: white;
+  font-size: 1em;
+}
+
+.fixed > button > a {
+  text-decoration: none;
+}
 /*# sourceMappingURL=index.css.map */
